@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             GameManager manager = new GameManager(); // Creates a new instance of "GameManager"
-            manager.ProgramStart();  //Calls to Program Start in the GameManager
+            manager.ProgramStart();  // Calls to Program Start in the GameManager
         }
     }
 }
