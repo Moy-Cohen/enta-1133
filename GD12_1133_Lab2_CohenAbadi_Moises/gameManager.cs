@@ -33,21 +33,29 @@ namespace GD12_1133_Lab2_CohenAbadi_Moises
             DieRoller roll1 = new DieRoller(); // First inscance of the dice roller 
 
             roll1.RollDice(); // Starts the die roller
+            sum += roll1.rolledNum; // Adds the rolled number to the sum total
+            
+            roll1.RollDice(); // Starts the die roller
+            sum += roll1.rolledNum; // Adds the rolled number to the sum total
+            roll1.RollDice(); // Starts the die roller
+            sum += roll1.rolledNum; // Adds the rolled number to the sum total
+            roll1.RollDice(); // Starts the die roller
+            sum += roll1.rolledNum; // Adds the rolled number to the sum total
 
-            DieRoller roll2 = new DieRoller(); // Second inscance of the dice roller 
+            //DieRoller roll2 = new DieRoller(); // Second inscance of the dice roller 
 
-            roll2.RollDice(); // Starts the die roller
+            //roll2.RollDice(); // Starts the die roller
 
-            DieRoller roll3 = new DieRoller(); // Third inscance of the dice roller 
+            //DieRoller roll3 = new DieRoller(); // Third inscance of the dice roller 
 
-            roll3.RollDice();  // Starts the die roller
+            //roll3.RollDice();  // Starts the die roller
 
-            DieRoller roll4 = new DieRoller(); // Fourth inscance of the dice roller 
+            //DieRoller roll4 = new DieRoller(); // Fourth inscance of the dice roller 
 
-            roll4.RollDice();  // Starts the die roller
+            //roll4.RollDice();  // Starts the die roller
 
 
-            sum = roll1.rolledNum + roll2.rolledNum + roll3.rolledNum + roll4.rolledNum;  // The variable "sum" adds the numbers from all the instances of the die roller
+            //sum = roll1.rolledNum + roll2.rolledNum + roll3.rolledNum + roll4.rolledNum;  // The variable "sum" adds the numbers from all the instances of the die roller
             Console.WriteLine("Total Rolled = " + sum);  // Prints the result of the "sum" variable 
             Console.WriteLine("");
 
