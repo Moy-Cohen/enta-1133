@@ -16,6 +16,8 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
             Welcome();
             TurnOrder();
             Ending();
+
+            // Game start function, runs the game functions in order
         }
 
         public void Welcome()
@@ -28,6 +30,8 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
             Console.WriteLine("Welcome Player!");
             Console.WriteLine("What is your name?");
             PlayerName = Console.ReadLine();
+                // Welcomes the player and asks for their name
+
             Console.WriteLine("Hello " + PlayerName + "!");
             Console.WriteLine("Do You want to play a game?");
             if (Console.ReadLine() == "yes")
@@ -36,11 +40,11 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
             }
             else
             {
-                Ending();
+                Goodbye();
+                Environment.Exit(0);
+                // Close the program. Reference Link: https://stackoverflow.com/questions/5682408/command-to-close-an-application-of-console
             }
-            Console.WriteLine(WantToPlay);
-            
-
+            // Asks the player if they would like to play
 
         }
 
@@ -52,81 +56,123 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
             Player Cpu = new Player();
             Random Random = new Random();
             Turn = Random.Next(1,3);
-            Console.WriteLine(Turn);
+            
+              
             if (Turn == 1)
             {
                 Console.WriteLine("You go first!");
+                Console.WriteLine("Player Turn");
+                Console.WriteLine();
                 PlayerTurn();
+                CpuTurn();
+                Console.WriteLine("CPU Turn");
+                Console.WriteLine();
+                PointTally();
+                Console.WriteLine("Next Turn");
+                Console.WriteLine("Player Turn");
+                Console.WriteLine();
+                PlayerTurn();
+                Console.WriteLine("CPU Turn");
+                Console.WriteLine();
                 CpuTurn();
                 PointTally();
                 Console.WriteLine("Next Turn");
+                Console.WriteLine("Player Turn");
+                Console.WriteLine();
                 PlayerTurn();
+                Console.WriteLine("CPU Turn");
+                Console.WriteLine();
                 CpuTurn();
                 PointTally();
                 Console.WriteLine("Next Turn");
+                Console.WriteLine("Player Turn");
+                Console.WriteLine();
                 PlayerTurn();
+                Console.WriteLine("CPU Turn");
+                Console.WriteLine();
                 CpuTurn();
                 PointTally();
-                Console.WriteLine("Next Turn");
-                PlayerTurn();
-                CpuTurn();
-                PointTally();
-                Console.WriteLine("Game Ended");
+                Console.WriteLine("Game Over");
             }
             else
             {
                 Console.WriteLine("CPU goes first!");
+                Console.WriteLine("CPU Turn");
+                Console.WriteLine();
                 CpuTurn();
+                Console.WriteLine("Player Turn");
+                Console.WriteLine();
                 PlayerTurn();
                 PointTally();
                 Console.WriteLine("Next Turn");
+                Console.WriteLine("CPU Turn");
+                Console.WriteLine();
                 CpuTurn();
+                Console.WriteLine("Player Turn");
+                Console.WriteLine();
                 PlayerTurn();
                 PointTally();
                 Console.WriteLine("Next Turn");
+                Console.WriteLine("CPU Turn");
+                Console.WriteLine();
                 CpuTurn();
+                Console.WriteLine("Player Turn");
+                Console.WriteLine();
                 PlayerTurn();
                 PointTally();
                 Console.WriteLine("Next Turn");
+                Console.WriteLine("CPU Turn");
+                Console.WriteLine();
                 CpuTurn();
+                Console.WriteLine("Player Turn");
+                Console.WriteLine();
                 PlayerTurn();
                 PointTally();
-                Console.WriteLine("Game Ended");
+                Console.WriteLine("Game Over");
             }
+            //Decides who goes first between the player and the CPU
         }
-        internal bool d6 = false;
-        internal bool d8 = false;
-        internal bool d12 = false;
-        internal bool d20 = false;
-
+        internal bool PlayerD6 = false;
+        internal bool PlayerD8 = false;
+        internal bool PlayerD12 = false;
+        internal bool PlayerD20 = false;
+            // Player Dice inventory, when the bool == true, the player cannot use that die
+        internal int PlayerDiceRolls = 0;
+            // Stores the Rolled numbers to later calculate scores
         public void PlayerTurn()
         {
 
             string DieSize;
             Player Player = new Player();
 
-            Console.WriteLine("Enter the number of sided you want the die you use this round to have out of the following options: 6, 8, 12, or 20. You can only choose each option once.");
+            Console.WriteLine("Enter the number of sides you want the die you use this round to have out of the following options: 6, 8, 12, or 20. You can only choose each option once.");
+            Console.WriteLine();
             DieSize = Console.ReadLine();
+                // Asks the player what die they want to use and display the options storing the string in "DieSize"
             if (DieSize == "6")
             {
 
-                if (d6 == false) 
+                if (PlayerD6 == false) 
                 {
-                    
-                    Dice PlayerD6Roll = new Dice();
-                    PlayerD6Roll.Sides = 6;
-                    PlayerD6Roll.Roll();
-                    Console.WriteLine("You rolled a " + PlayerD6Roll.RolledNum);
+                    Console.WriteLine("You Chose D6");
+                    Console.WriteLine();
+                    Dice PlayerRoll = new Dice();
+                    PlayerRoll.Sides = 6;
+                    PlayerRoll.Roll();
+                    Console.WriteLine("Player Rolled: " + PlayerRoll.RolledNum);
+                    Console.WriteLine();
+                    PlayerDiceRolls = PlayerRoll.RolledNum;
                     
                 }
-                if (d6 == true)
+                else
                 {
-                    Console.WriteLine("This die has already been used");
+                    Console.WriteLine("This die has been used");
+                    Console.WriteLine();
                     Player.Score += 0;
 
                 }
 
-                d6 = true;
+                PlayerD6 = true;
 
 
 
@@ -134,86 +180,265 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
             else if (DieSize == "8")
             {
 
-                if (d8 == false)
+                if (PlayerD8 == false)
                 {
-
-                    Dice PlayerD8Roll = new Dice();
-                    PlayerD8Roll.Sides = 8;
-                    PlayerD8Roll.Roll();
-                    Console.WriteLine("You rolled a " + PlayerD8Roll.RolledNum);
+                    Console.WriteLine("You Chose D8");
+                    Console.WriteLine();
+                    Dice PlayerRoll = new Dice();
+                    PlayerRoll.Sides = 8;
+                    PlayerRoll.Roll();
+                    Console.WriteLine("You rolled a " + PlayerRoll.RolledNum);
+                    Console.WriteLine();
+                    PlayerDiceRolls = PlayerRoll.RolledNum;
 
                 }
-                if (d8 == true)
+                else
                 {
-                    Console.WriteLine("This die has already been used");
+                    Console.WriteLine("This die has been used");
+                    Console.WriteLine();
                     Player.Score += 0;
 
                 }
 
-                d8 = true;
+                PlayerD8 = true;
             }
             else if (DieSize == "12")
             {
 
-                if (d12 == false)
+                if (PlayerD12 == false)
                 {
-
-                    Dice PlayerD12Roll = new Dice();
-                    PlayerD12Roll.Sides = 12;
-                    PlayerD12Roll.Roll();
-                    Console.WriteLine("You rolled a " + PlayerD12Roll.RolledNum);
+                    Console.WriteLine("You Chose D12");
+                    Console.WriteLine();
+                    Dice PlayerRoll = new Dice();
+                    PlayerRoll.Sides = 12;
+                    PlayerRoll.Roll();
+                    Console.WriteLine("You rolled a " + PlayerRoll.RolledNum);
+                    Console.WriteLine();
+                    PlayerDiceRolls = PlayerRoll.RolledNum;
 
                 }
-                if (d12 == true)
+                else
                 {
-                    Console.WriteLine("This die has already been used");
+                    Console.WriteLine("This die has been used");
+                    Console.WriteLine();
                     Player.Score += 0;
 
                 }
 
-                d12 = true;
+                PlayerD12 = true;
             }
             else if (DieSize == "20")
             {
 
-                if (d20 == false)
+                if (PlayerD20 == false)
                 {
-
-                    Dice PlayerD20Roll = new Dice();
-                    PlayerD20Roll.Sides = 6;
-                    PlayerD20Roll.Roll();
-                    Console.WriteLine("You rolled a " + PlayerD20Roll.RolledNum);
+                    Console.WriteLine("You Chose D20");
+                    Console.WriteLine();
+                    Dice PlayerRoll = new Dice();
+                    PlayerRoll.Sides = 6;
+                    PlayerRoll.Roll();
+                    Console.WriteLine("You rolled a " + PlayerRoll.RolledNum);
+                    Console.WriteLine();
+                    PlayerDiceRolls = PlayerRoll.RolledNum;
 
                 }
-                if (d20 == true)
+                else
                 {
-                    Console.WriteLine("This die has already been used");
+                    Console.WriteLine("This die has been used");
+                    Console.WriteLine();
                     Player.Score += 0;
 
                 }
 
-                d20 = true;
+                PlayerD20 = true;
             }
             else
             {
                 Console.WriteLine("Error");
             }
-
+                /*Compares "Die Size", and rolls the selected Die.
+                 *If the answer given by the player does not match with the options, console print "Error" and the player looses that turn.
+                 *If the player repeats a die console print " dice repeat not allowed" and the player will loose that turn.
+                 */
         }
 
+        internal bool CpuD6 = false;
+        internal bool CpuD8 = false;
+        internal bool CpuD12 = false;
+        internal bool CpuD20 = false;
+            // CPU Dice inventory, when the bool == true, the CPU cannot use that die
+        internal int CpuDiceRolls = 0;
+            // Stores the Rolled numbers to later calculate scores
         public void CpuTurn()
         {
+            int CpuDice = 0;
+            Random CpuDiceSelect = new Random();
+            CpuDice = CpuDiceSelect.Next(1,5);
+            
+                // CPU creates a random number between 1 and 4 which determines the dice selection
+            if (CpuDice == 1)
+            {
+                if (CpuD6 == false)
+                {
+                    Console.WriteLine("CPU Chose D6");
+                    Console.WriteLine();
+                    Dice CpuRoll = new Dice();
+                    CpuRoll.Sides = 6;
+                    CpuRoll.Roll();
+                    Console.WriteLine("CPU Rolled: " + CpuRoll.RolledNum);
+                    Console.WriteLine();
+                    CpuDiceRolls = CpuRoll.RolledNum;
 
+
+                }
+                else
+                {
+                    
+                    CpuTurn();
+  
+                }
+
+                CpuD6 = true;
+
+                
+            }
+
+            if (CpuDice == 2)
+            {
+                if (CpuD8 == false)
+                {
+                    Console.WriteLine("CPU Chose D8");
+                    Console.WriteLine();
+                    Dice CpuRoll = new Dice();
+                    CpuRoll.Sides = 8;
+                    CpuRoll.Roll();
+                    Console.WriteLine("CPU Rolled: " + CpuRoll.RolledNum);
+                    Console.WriteLine();
+                    CpuDiceRolls = CpuRoll.RolledNum;
+
+                }
+                else
+                {
+                    
+                    CpuTurn();
+
+                }
+
+                CpuD8 = true;
+
+            }
+            if ( CpuDice == 3)
+            {
+                if (CpuD12 == false)
+                {
+                    Console.WriteLine("CPU Chose D12");
+                    Console.WriteLine();
+                    Dice CpuRoll = new Dice();
+                    CpuRoll.Sides = 12;
+                    CpuRoll.Roll();
+                    Console.WriteLine("CPU Rolled: " + CpuRoll.RolledNum);
+                    Console.WriteLine();
+                    CpuDiceRolls = CpuRoll.RolledNum;
+
+                }
+                else
+                {
+
+                    
+                    CpuTurn();
+
+                }
+
+                CpuD12 = true;
+
+            }
+
+            if (CpuDice == 4)
+            {
+                if (CpuD20 == false)
+                {
+                    Console.WriteLine("CPU Chose D20");
+                    Console.WriteLine();
+                    Dice CpuRoll = new Dice();
+                    CpuRoll.Sides = 20;
+                    CpuRoll.Roll();
+                    Console.WriteLine("CPU Rolled: " + CpuRoll.RolledNum);
+                    Console.WriteLine();
+                    CpuDiceRolls = CpuRoll.RolledNum;
+
+                }
+                else
+                {
+
+                    
+                    CpuTurn();
+
+                }
+
+                CpuD20 = true;
+            }
         }
-
+            /* CPU selects and rolls the die depending on the value of "CpuDice".
+             * If the die was already rolled the function rolls again until an unused die is selected.
+             */
+        internal int PlayerTotal = 0;
+        internal int CpuTotal = 0;
         public void PointTally()
         {
+            Player Player1 = new Player();
+            Player Cpu = new Player();
 
+            if (PlayerDiceRolls > CpuDiceRolls)
+            {
+                Player1.Score += (PlayerDiceRolls + CpuDiceRolls);
+            }
+            else if (CpuDiceRolls > PlayerDiceRolls)
+            {
+                Cpu.Score += (PlayerDiceRolls + CpuDiceRolls);
+            }
+            else
+            {
+                Player1.Score += 0;
+                Cpu.Score += 0;
+            }
+
+            Console.WriteLine("Player Score = " + Player1.Score);
+            Console.WriteLine("CPU Score = " + Cpu.Score);
+            PlayerTotal += Player1.Score;
+            CpuTotal += Cpu.Score;
         }
+            // Point calculator, the better roll gets points equals to the sum of both rolls
 
         public void Ending()
         {
+            Console.WriteLine("PLayer Final Score: " + PlayerTotal);
+            Console.WriteLine();
+            Console.WriteLine("CPU Final Score: " + CpuTotal);
+            Console.WriteLine();
+
+            if (PlayerTotal > CpuTotal)
+            {
+                Console.WriteLine("Congratulations!! You Win!!");
+                Console.WriteLine("Goodbye");
+            }
+            else if (CpuTotal > PlayerTotal)
+            {
+                Console.WriteLine("Cpu Wins, Better luck next time.");
+            }
+            else
+            {
+                Console.WriteLine("It is a Tie, Play again");
+            }
+
+            //Total score display, winner is announced, congratulations or better luck next time, goodbye message
 
         }
+
+        public void Goodbye()
+        {
+            Console.WriteLine("It's Okay, let's playa another time!");
+        }
+            //If the player does not want to play, the console closes.
+
     }
 }

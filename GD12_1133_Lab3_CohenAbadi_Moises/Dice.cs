@@ -21,5 +21,5 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
         }
     }
 
-    
+    // Dice roller class, creates a random number between 1 and the number of faces for the selected die
 }

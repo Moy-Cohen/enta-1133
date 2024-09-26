@@ -7,6 +7,8 @@
             GameManager manager = new GameManager();
             manager.GameStart();
 
+            // Starts the program, creates an instance of game manager and starts the GameStart function
+
         }
     }
 }
