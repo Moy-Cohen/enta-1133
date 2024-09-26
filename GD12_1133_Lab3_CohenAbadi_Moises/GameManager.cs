@@ -101,11 +101,13 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
 
         public void PlayerTurn()
         {
-            int DieSize = 0;
+
+            string DieSize;
             Player Player = new Player();
 
             Console.WriteLine("Enter the number of sided you want the die you use this round to have out of the following options: 6, 8, 12, or 20. You can only choose each option once.");
-            if (Console.ReadLine() == "6")
+            DieSize = Console.ReadLine();
+            if (DieSize == "6")
             {
 
                 if (d6 == false) 
@@ -129,7 +131,7 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
 
 
             }
-            else if (Console.ReadLine() == "8")
+            else if (DieSize == "8")
             {
 
                 if (d8 == false)
@@ -150,7 +152,7 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
 
                 d8 = true;
             }
-            else if (Console.ReadLine() == "12")
+            else if (DieSize == "12")
             {
 
                 if (d12 == false)
@@ -171,7 +173,7 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
 
                 d12 = true;
             }
-            else if (Console.ReadLine() == "20")
+            else if (DieSize == "20")
             {
 
                 if (d20 == false)
