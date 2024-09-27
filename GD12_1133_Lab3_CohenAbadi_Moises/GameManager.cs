@@ -25,7 +25,14 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
             string PlayerName;
             bool WantToPlay = false;
             Console.WriteLine("");
-            Console.WriteLine("If prompted type the answer to whatever question and press enter");
+            Console.WriteLine("This game consist in rolling dice");
+            Console.WriteLine("You will have a set of four dice, each with diferent numbers of sides: D6, D8, D12 and D20");
+            Console.WriteLine("You will have to choose one die each round, but be careful, if you try to repeat dice or you write something else than the given options you will loose a turn.");
+            Console.WriteLine("The CPU will also roll the same amount of dice, the highest roll will tanke the sum of the rolled numbers as points");
+            Console.WriteLine("At the end of all four round whoever has de most points wins the game");
+            Console.WriteLine("Good Luck! And Have Fun!");
+            Console.WriteLine();
+            Console.WriteLine("If prompted type the answer to whatever the question is and press enter");
             Console.WriteLine("");
             Console.WriteLine("Welcome Player!");
             Console.WriteLine("What is your name?");
@@ -145,7 +152,7 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
             string DieSize;
             Player Player = new Player();
 
-            Console.WriteLine("Enter the number of sides you want the die you use this round to have out of the following options: 6, 8, 12, or 20. You can only choose each option once.");
+            Console.WriteLine("Choose the number of sides: 6, 8, 12, or 20 ");
             Console.WriteLine();
             DieSize = Console.ReadLine();
                 // Asks the player what die they want to use and display the options storing the string in "DieSize"
