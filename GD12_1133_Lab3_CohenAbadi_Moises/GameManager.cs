@@ -426,7 +426,7 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
             if (PlayerTotal > CpuTotal)
             {
                 Console.WriteLine("Congratulations!! You Win!!");
-                Console.WriteLine("Goodbye");
+                
             }
             else if (CpuTotal > PlayerTotal)
             {
@@ -436,6 +436,9 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
             {
                 Console.WriteLine("It is a Tie, Play again");
             }
+
+            Console.WriteLine("Let's play again sometime! :)");
+            Console.WriteLine("Goodbye");
 
             //Total score display, winner is announced, congratulations or better luck next time, goodbye message
 
