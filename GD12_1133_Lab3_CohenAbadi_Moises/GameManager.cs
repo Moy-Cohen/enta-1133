@@ -158,23 +158,24 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
                 // Asks the player what die they want to use and display the options storing the string in "DieSize"
             if (DieSize == "6")
             {
-
+                Dice PlayerRoll = new Dice();
                 if (PlayerD6 == false) 
                 {
                     Console.WriteLine("You Chose D6");
                     Console.WriteLine();
-                    Dice PlayerRoll = new Dice();
+                    
                     PlayerRoll.Sides = 6;
                     PlayerRoll.Roll();
                     Console.WriteLine("Player Rolled: " + PlayerRoll.RolledNum);
                     Console.WriteLine();
-                    PlayerDiceRolls = PlayerRoll.RolledNum;
+                    PlayerDiceRolls += PlayerRoll.RolledNum;
                     
                 }
                 else
                 {
                     Console.WriteLine("This die has been used");
                     Console.WriteLine();
+                    PlayerDiceRolls += 0;
                     Player.Score += 0;
 
                 }
@@ -186,23 +187,24 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
             }
             else if (DieSize == "8")
             {
-
+                Dice PlayerRoll = new Dice();
                 if (PlayerD8 == false)
                 {
                     Console.WriteLine("You Chose D8");
                     Console.WriteLine();
-                    Dice PlayerRoll = new Dice();
+                    
                     PlayerRoll.Sides = 8;
                     PlayerRoll.Roll();
                     Console.WriteLine("You rolled a " + PlayerRoll.RolledNum);
                     Console.WriteLine();
-                    PlayerDiceRolls = PlayerRoll.RolledNum;
+                    PlayerDiceRolls += PlayerRoll.RolledNum;
 
                 }
                 else
                 {
                     Console.WriteLine("This die has been used");
                     Console.WriteLine();
+                    PlayerDiceRolls += 0;
                     Player.Score += 0;
 
                 }
@@ -211,23 +213,24 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
             }
             else if (DieSize == "12")
             {
-
+                Dice PlayerRoll = new Dice();
                 if (PlayerD12 == false)
                 {
                     Console.WriteLine("You Chose D12");
                     Console.WriteLine();
-                    Dice PlayerRoll = new Dice();
+                    
                     PlayerRoll.Sides = 12;
                     PlayerRoll.Roll();
                     Console.WriteLine("You rolled a " + PlayerRoll.RolledNum);
                     Console.WriteLine();
-                    PlayerDiceRolls = PlayerRoll.RolledNum;
+                    PlayerDiceRolls += PlayerRoll.RolledNum;
 
                 }
                 else
                 {
                     Console.WriteLine("This die has been used");
                     Console.WriteLine();
+                    PlayerDiceRolls += 0;
                     Player.Score += 0;
 
                 }
@@ -236,23 +239,24 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
             }
             else if (DieSize == "20")
             {
-
+                Dice PlayerRoll = new Dice();
                 if (PlayerD20 == false)
                 {
                     Console.WriteLine("You Chose D20");
                     Console.WriteLine();
-                    Dice PlayerRoll = new Dice();
+                    
                     PlayerRoll.Sides = 6;
                     PlayerRoll.Roll();
                     Console.WriteLine("You rolled a " + PlayerRoll.RolledNum);
                     Console.WriteLine();
-                    PlayerDiceRolls = PlayerRoll.RolledNum;
+                    PlayerDiceRolls += PlayerRoll.RolledNum;
 
                 }
                 else
                 {
                     Console.WriteLine("This die has been used");
                     Console.WriteLine();
+                    PlayerDiceRolls += 0;
                     Player.Score += 0;
 
                 }
