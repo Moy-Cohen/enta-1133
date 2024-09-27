@@ -9,7 +9,13 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
     internal class Player
     {
         public int Score = 0;
+        public bool D6 = false;
+        public bool D8 = false;
+        public bool D12 = false;
+        public bool D20 = false;
+        public string Name;
     }
 
     // Player class, Stores the score for both the player and the CPU
+    // Stores the dice inventory
 }
