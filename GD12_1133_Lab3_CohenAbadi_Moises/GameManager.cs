@@ -24,8 +24,7 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
         
         public void Welcome()
         {
-            string WantToPlay;
-
+         
             Console.WriteLine("Hello player! And welcome to Rolling Dice!");
             Console.WriteLine();
             Console.WriteLine("In this game you have a selection of dice with different number of faces");
@@ -40,7 +39,11 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
             Player1.Name = Console.ReadLine();
 
             // This function welcomes the player, explains the game and ask for the player name.
+        }
 
+        public void AskPlay()
+        {
+            string WantToPlay;
             Console.WriteLine("So " + Player1.Name + ", would you like to play?");
             WantToPlay = Console.ReadLine();
             if (WantToPlay == "yes")
@@ -58,24 +61,29 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
             //Close the program. Reference Link: https://stackoverflow.com/questions/5682408/command-to-close-an-application-of-console
         }
 
-        public void Turn1()
+        public void TurnOrder()
         {
-            string GoFirst;
-            Console.WriteLine("Turn 1");
-            Console.WriteLine();
-            Console.WriteLine("Would you like to go first" + Player1.Name + "?");
-            Console.WriteLine("Press 1 for yes or 2 for no");
-            GoFirst = Console.ReadLine();
-            if (GoFirst == "1")
+            int GoesFirst = 0;
+            Random Random = new Random();
+            GoesFirst = Random.Next(1, 3);
+
+            if (GoesFirst == 1)
             {
-                
+                Console.WriteLine(Player1.Name + ", You go First");
+                //PlayerTurn1();
+            }
+            else
+            {
+                Console.WriteLine("I play first");
             }
 
         }
 
+
         
-        
-        
+
+
+
 
 
 
