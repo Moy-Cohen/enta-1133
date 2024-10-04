@@ -12,12 +12,12 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
         public int Sides = 0;
         public int RolledNum = 0;
 
-        public void Roll()
+        public int Roll(int Sides)
         {
 
             Random Random = new Random();
             RolledNum = Random.Next(1, Sides + 1);
-
+            return RolledNum;
         }
     }
 

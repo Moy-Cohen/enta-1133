@@ -75,12 +75,121 @@ namespace GD12_1133_Lab3_CohenAbadi_Moises
             else
             {
                 Console.WriteLine("I play first");
+                CPUTurn();
             }
 
         }
 
+        public void CPUTurn()
+        {
+            int CpuDice = 0;
+            Random CpuDiceSelect = new Random();
+            CpuDice = CpuDiceSelect.Next(1, 5);
 
-        
+            // CPU creates a random number between 1 and 4 which determines the dice selection
+            /*
+            if (CpuDice == 1)
+            {
+                if (CPU.D6 == false)
+                {
+                    Console.WriteLine("CPU Chose D6");
+                    Console.WriteLine();
+                    CPUDice.Sides = 6;
+                    Console.WriteLine("I rolled " + CPUDice.Roll(CPUDice.Sides));
+
+                }
+                else
+                {
+
+                    CpuTurn();
+
+                }
+
+                CPU.D6 = true;
+
+
+            }
+
+            if (CpuDice == 2)
+            {
+                if (CpuD8 == false)
+                {
+                    Console.WriteLine("CPU Chose D8");
+                    Console.WriteLine();
+                    Dice CpuRoll = new Dice();
+                    CpuRoll.Sides = 8;
+                    CpuRoll.Roll();
+                    Console.WriteLine("CPU Rolled: " + CpuRoll.RolledNum);
+                    Console.WriteLine();
+                    CpuDiceRolls = CpuRoll.RolledNum;
+
+                }
+                else
+                {
+
+                    CpuTurn();
+
+                }
+
+                CpuD8 = true;
+
+            }
+            if (CpuDice == 3)
+            {
+                if (CpuD12 == false)
+                {
+                    Console.WriteLine("CPU Chose D12");
+                    Console.WriteLine();
+                    Dice CpuRoll = new Dice();
+                    CpuRoll.Sides = 12;
+                    CpuRoll.Roll();
+                    Console.WriteLine("CPU Rolled: " + CpuRoll.RolledNum);
+                    Console.WriteLine();
+                    CpuDiceRolls = CpuRoll.RolledNum;
+
+                }
+                else
+                {
+
+
+                    CpuTurn();
+
+                }
+
+                CpuD12 = true;
+
+            }
+
+            if (CpuDice == 4)
+            {
+                if (CpuD20 == false)
+                {
+                    Console.WriteLine("CPU Chose D20");
+                    Console.WriteLine();
+                    Dice CpuRoll = new Dice();
+                    CpuRoll.Sides = 20;
+                    CpuRoll.Roll();
+                    Console.WriteLine("CPU Rolled: " + CpuRoll.RolledNum);
+                    Console.WriteLine();
+                    CpuDiceRolls = CpuRoll.RolledNum;
+
+                }
+                else
+                {
+
+
+                    CpuTurn();
+
+                }
+
+                CPUD20 = true; 
+            }*/
+        }
+
+
+
+
+
 
 
 
