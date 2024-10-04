@@ -6,6 +6,7 @@
         {
             GameManager manager = new GameManager();
             manager.Start();
+            //Creates an instance of game manager and starts the program
 
         }
     }

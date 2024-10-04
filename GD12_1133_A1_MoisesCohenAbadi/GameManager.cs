@@ -25,6 +25,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
             GameLoop();
             
         }
+        
 
         public void AskPlay()
         {
@@ -46,6 +47,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
                 Environment.Exit(0);
                 // Close the program. Reference Link: https://stackoverflow.com/questions/5682408/command-to-close-an-application-of-console
             }
+            //Asks the player if they want to play, if yes the game continues if no the game closes
 
         }
 
@@ -61,6 +63,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
             Console.ReadKey();
 
         }
+        // Explains the rules of the game, after player input the game continues
 
         public void GameLoop()
         {
@@ -72,6 +75,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
             }
             while (ContinuePlaying == true);
         }
+        //Option to start a new game after all rounds are over and all dice are rolled
 
         public void RunGame()
         {
@@ -82,12 +86,13 @@ namespace GD12_1133_A1_MoisesCohenAbadi
                 Console.WriteLine($" Round  {CurrentRound + 1}  Begins");
                 Console.WriteLine("Would you like to go first " + Player1.PlayerName + "?   (yes) or (no)");
                 GoFirst = Console.ReadLine();
-
+                // starts the rounds loop asking the player if they want to choose dice first
                 while (GoFirst != "yes" && GoFirst != "no")
                 {
                     Console.WriteLine("Please select a valid option   (yes) or (no)");
                     GoFirst = Console.ReadLine();
                 }
+                //If the player selects a different answer show error and asks again
 
                 PlayerFirst = GoFirst == "yes";
 
@@ -101,12 +106,13 @@ namespace GD12_1133_A1_MoisesCohenAbadi
                     Computer.CPUTurn();
                     Player1.PlayerTurn();
                 }
+                // Turn order, player first or payer second 
                 Console.WriteLine($"Round {CurrentRound+1} Results:");
                 Console.WriteLine(Player1.PlayerName + " you rolled " + Player1.CurrentRoll);
                 Console.WriteLine("I rolled " + Computer.CurrentRoll);
-
+                // Print round results
                 Console.WriteLine("-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
-
+                // Round separator
             }
 
         }
@@ -116,6 +122,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
             Console.WriteLine("The game is over, let's see our scores");
             Player1.PlayerStats();
             Computer.CPUStats();
+            //Compare final scores
 
             if (Player1.Score > Computer.Score)
             {
@@ -126,6 +133,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
             {
                 Console.WriteLine("I won, Better luck nex time!");
             }
+            //Declaring the winner of the game
         }
 
         public void PlayAgain()
@@ -133,6 +141,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
             string OneMoreGame;
             Console.WriteLine("Would you like to play again?    (yes) or (no)");
             OneMoreGame = Console.ReadLine();
+            //Asks player if they want to start over the game
             if (OneMoreGame == "yes")
             {
                 ContinuePlaying = true;
@@ -140,12 +149,14 @@ namespace GD12_1133_A1_MoisesCohenAbadi
                 Computer.CPUDicePool = new List<int> { 4, 6, 8, 10, 12, 20, 100 };
                 Console.WriteLine("Let's Roll Some Dice!");
                 Console.WriteLine("-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
+                //If yes both dice lists get reseted to include all dice options 
             }
             else
             {
                 Console.WriteLine("See you next time. Goodbye!");
                 ContinuePlaying = false;
             }
+            //If player does not want to keep playing program ends
         }
     }
 }

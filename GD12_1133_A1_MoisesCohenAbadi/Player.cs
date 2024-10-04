@@ -11,7 +11,6 @@ namespace GD12_1133_A1_MoisesCohenAbadi
         public int Score = 0;
         public int CurrentRoll = 0;
         public List<int> PlayerDicePool = new List<int> { 4, 6, 8, 10, 12, 20, 100 };
-
         public string PlayerName;
 
         internal void AskName()
@@ -21,11 +20,13 @@ namespace GD12_1133_A1_MoisesCohenAbadi
             PlayerName = Console.ReadLine();
             Console.WriteLine("Nice to meet you " + PlayerName);
         }
+        //Asks and stores the username of the player
 
         public void AvailablePlayerDice()
         {
             PlayerDicePool = new List<int> {4, 6, 8, 10, 12, 20, 100};
         }
+        //Creates the avaliable dice options the player can use
 
         public void PlayerTurn()
         {
@@ -35,6 +36,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
             {
                 Console.WriteLine($"D{PlayerDicePool[i]}");
             }
+            //Lists all of the current dice options the player have
 
             Console.WriteLine("Please select which die you want to roll this round");
             string ChosenDie = Console.ReadLine();
@@ -46,15 +48,19 @@ namespace GD12_1133_A1_MoisesCohenAbadi
                 Console.WriteLine("Please Select from the available options.");
                 ChosenDie = Console.ReadLine();
             }
+            //If the player inputs an unexpected value shows an error and asks the player to choose again
             
             PlayerDicePool.Remove(SelectedDie);
             CurrentRoll = DiceRoller.RollDie(SelectedDie);
             Score += CurrentRoll;
+            //Removes the last rolled die from the list for next turn
+
         }
 
         public void PlayerStats()
         {
             Console.WriteLine(PlayerName + "'s Total Score:" + Score);
         }
+        //Prints player final score
     }
 }

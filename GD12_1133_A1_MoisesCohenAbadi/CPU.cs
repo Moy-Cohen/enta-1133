@@ -17,6 +17,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
         {
             CPUDicePool = new List<int> { 4, 6, 8, 10, 12, 20, 100 };
         }
+        //Creates a list that stores the dice inventory available
 
         public void CPUTurn()
         {
@@ -30,11 +31,13 @@ namespace GD12_1133_A1_MoisesCohenAbadi
             CurrentRoll = DiceRoller.RollDie(SelectedDie);
             Score += CurrentRoll;
         }
+        //Cpu randomly select a dice form the available inventory, the selcted die gets rolled and deleted from the list, score is added to the previous value
 
         public void CPUStats ()
         {
             Console.WriteLine("My Total Score is:" + Score);
         }
+        //Prints the final score of the Cpu
     }
 
     
