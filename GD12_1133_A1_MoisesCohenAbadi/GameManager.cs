@@ -29,7 +29,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
 
         public void AskPlay()
         {
-            bool WantToPlay = false;
+            
             string YesPlay;
             Console.WriteLine("So " + Player1.PlayerName + " What do you say we play a game?");
             Console.WriteLine("I promise it will be fun!");
@@ -54,7 +54,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
         public void Rules()
         {
             Console.WriteLine("The game is called (Roll Some Dice!)");
-            Console.WriteLine("Each game lastas 7 rounds");
+            Console.WriteLine("Each game lasts 7 rounds");
             Console.WriteLine("Each of us will have a pool of 7 different dice available (D4, D6, D8, D10, D12, D20 & D100)");
             Console.WriteLine("Each round you will choose one of your available dice and roll it, I will do the same");
             Console.WriteLine("Whoever gets the higher role gets to add their rolled number to their score");

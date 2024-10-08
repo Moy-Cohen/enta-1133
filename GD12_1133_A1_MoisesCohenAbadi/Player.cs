@@ -11,7 +11,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
         public int Score = 0;
         public int CurrentRoll = 0;
         public List<int> PlayerDicePool = new List<int> { 4, 6, 8, 10, 12, 20, 100 };
-        public string PlayerName;
+        public string PlayerName = "username";
 
         internal void AskName()
         {
