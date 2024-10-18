@@ -8,7 +8,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
 {
     public class Enemies
     {
-       
+   
     }
 
     

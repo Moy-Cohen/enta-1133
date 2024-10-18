@@ -10,6 +10,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
 {
     public class GameManager
     {
+        public Player Player1 = new Player();
         public void startGame()
         {
 

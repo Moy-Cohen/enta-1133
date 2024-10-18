@@ -40,7 +40,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
         public override void weaponDamage(ref int damage)
         {
             dice.numberOfSides = maxDamage;
-            dice.rollDice();
+            damage = dice.rollDice(maxDamage);
         }
     }
 
@@ -53,7 +53,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
         public override void weaponDamage(ref int damage)
         {
             dice.numberOfSides = maxDamage;
-            dice.rollDice();
+            dice.rollDice(maxDamage);
         }
     }
 
@@ -66,7 +66,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
         public override void weaponDamage(ref int damage)
         {
             dice.numberOfSides = maxDamage;
-            dice.rollDice();
+            dice.rollDice(maxDamage);
         }
     }
 
@@ -79,7 +79,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
         public override void weaponDamage(ref int damage)
         {
             dice.numberOfSides = maxDamage;
-            dice.rollDice();
+            dice.rollDice(maxDamage);
         }
     }
 
@@ -92,7 +92,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
         public override void heal(ref int playerHeals)
         {
           dice.numberOfSides = maxHeal;
-          dice.rollDice();
+          dice.rollDice(maxHeal);
         }
     }
 
@@ -103,7 +103,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
         public override void heal(ref int playerHeals)
         {
             dice.numberOfSides = maxHeal;
-            dice.rollDice();
+            dice.rollDice(maxHeal);
         }
     }
 
@@ -114,7 +114,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
         public override void heal(ref int playerHeals)
         {
             dice.numberOfSides = maxHeal;
-            dice.rollDice();
+            dice.rollDice(maxHeal);
         }
     }
 }
