@@ -27,7 +27,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
     {
         public override bool itemConsumes { get; } = true;
         public abstract int maxHeal { get; } 
-        public abstract void heal(ref int playerHeals);
+        public abstract int Heal();
     }
 
     // Weapons heritages
@@ -89,10 +89,11 @@ namespace GD12_1133_A1_MoisesCohenAbadi
     {
         public override string itemName { get; } = "HealthPotion";
         public override int maxHeal { get; } = 5;
-        public override void heal(ref int playerHeals)
+        public override int Heal()
         {
           dice.numberOfSides = maxHeal;
-          dice.rollDice(maxHeal);
+          int healthGained = dice.rollDice(maxHeal);
+          return healthGained;
         }
     }
 
@@ -100,10 +101,11 @@ namespace GD12_1133_A1_MoisesCohenAbadi
     {
         public override string itemName { get; } = "GreatHealthPotion";
         public override int maxHeal { get; } = 10;
-        public override void heal(ref int playerHeals)
+        public override int Heal()
         {
             dice.numberOfSides = maxHeal;
-            dice.rollDice(maxHeal);
+            int healthGained = dice.rollDice(maxHeal);
+            return healthGained;
         }
     }
 
@@ -111,10 +113,11 @@ namespace GD12_1133_A1_MoisesCohenAbadi
     {
         public override string itemName { get; } = "UltraHealthPotion";
         public override int maxHeal { get; } = 20;
-        public override void heal(ref int playerHeals)
+        public override int Heal()
         {
             dice.numberOfSides = maxHeal;
-            dice.rollDice(maxHeal);
+            int healthGained = dice.rollDice(maxHeal);
+            return healthGained;
         }
     }
 }

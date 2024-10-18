@@ -15,14 +15,16 @@ namespace GD12_1133_A1_MoisesCohenAbadi
         public bool playerIsAlive = true;
 
         //Create player inventory
-        Inventory playerInventory = new Inventory();
+        public Inventory playerInventory = new Inventory();
 
 
         // Function to reference player's hit points
         public void playerHpCheck()
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write(playerName + "currently has ");
+            Console.Write(playerName);
+            Console.ResetColor();
+            Console.WriteLine(" currently has ");
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(playerHp + "Hit points");
             Console.ResetColor();

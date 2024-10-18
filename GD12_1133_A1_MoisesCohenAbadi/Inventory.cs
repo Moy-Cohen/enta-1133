@@ -84,7 +84,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
             if (inventoryList.Count > 0)
             {
                 Console.WriteLine();
-                Console.WriteLine("You currently have:");
+                Console.WriteLine(GameManager.Player1.playerName + "You currently have:");
                 // Foreach loop that runs for each item in the inventory
                 foreach (Items item in inventoryList)
                 {
