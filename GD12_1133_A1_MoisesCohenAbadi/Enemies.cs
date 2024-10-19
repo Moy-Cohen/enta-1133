@@ -42,19 +42,21 @@ namespace GD12_1133_A1_MoisesCohenAbadi
             {
                 monsterList.Add(new GelatinousCube());
             }
+            
 
             return monsterList[random.Next(monsterList.Count)]; // Returns a random monster from the list
         }
 
-        /*public static Enemies BossMinotaur()
+        public static Enemies Boss()
         {
-            List<bossMinotaur> listBoss = new List<bossMinotaur>();
-            listBoss.Add(new bossMinotaur());
+            Random random = new Random();
+            List <Enemies> BossMonster = new List<Enemies>();
+            BossMonster.Add(new bossMinotaur());
 
-            return listBoss[(listBoss.Count)];
-
+            return BossMonster[random.Next(BossMonster.Count)];
         }
-       */
+
+        
         // Returns if the monster is alive
         public bool MonsterAlive()
         {

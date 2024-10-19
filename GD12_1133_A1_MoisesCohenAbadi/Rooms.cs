@@ -347,10 +347,10 @@ namespace GD12_1133_A1_MoisesCohenAbadi
 
         }
 
-       /* public class roomBoss : Rooms
+        public class roomBoss : Rooms
         {
             public override string roomName { get; } = "Boss Battle Room";
-            Enemies Boss = Enemies.BossMinotaur();
+            
             bool playerWin = false;
             bool wantToFight = false;
             string playerAnswer = "";
@@ -380,7 +380,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
                         case "yes":
                             wantToFight = true;
                             // Creates a variable to assign the random monster
-                            Enemies boss = Enemies.BossMinotaur();
+                            Enemies boss = Enemies.Boss();
 
                             // Display message of the type of monster the player is fighting
                             Console.Write("You are fighting against a");
@@ -622,7 +622,7 @@ namespace GD12_1133_A1_MoisesCohenAbadi
                 }
             }
 
-        }*/
+        }
     }
 
 }
