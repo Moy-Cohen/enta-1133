@@ -1,19 +1,23 @@
 ﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GD12_1133_A1_MoisesCohenAbadi
 {
-    internal class DiceRoller
+    public class DiceRoller
     {
-        public static int RollDie(int sides)
+        public int numberOfSides = 0;
+        public int rolledNumber = 0;
+        
+        // Random dice rolled
+        public int rollDice(int numberOfSides)
         {
-            Random RandomRoll = new Random();
-            return RandomRoll.Next(1, sides + 1);
+            Random random = new Random();
+            rolledNumber = random.Next(1, numberOfSides + 1);
+            return rolledNumber;
         }
-        // Random numer generator that functions as the dice in the game
-
     }
 }
