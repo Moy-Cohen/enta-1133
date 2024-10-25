@@ -1,66 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace GD12_1133_A1_MoisesCohenAbadi
 {
-    internal class Player
+    public class Player
     {
-        public int Score = 0;
-        public int CurrentRoll = 0;
-        public List<int> PlayerDicePool = new List<int> { 4, 6, 8, 10, 12, 20, 100 };
-        public string PlayerName = "username";
+        public string playerName = "";
+        public int playerHp = 50;
+        public int score = 0;
+        public bool playerIsAlive = true;
 
-        internal void AskName()
+        //Create player inventory
+        public Inventory playerInventory = new Inventory();
+
+
+        // Function to reference player's hit points
+        public void playerHpCheck()
         {
-            Console.WriteLine("Hello there!");
-            Console.WriteLine("Can I ask for your name?");
-            PlayerName = Console.ReadLine();
-            Console.WriteLine("Nice to meet you " + PlayerName);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write(playerName);
+            Console.ResetColor();
+            Console.WriteLine(" currently has ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(playerHp + "Hit points");
+            Console.ResetColor();
         }
-        //Asks and stores the username of the player
 
-        public void AvailablePlayerDice()
+        // Function to calculate damage taken by the player
+        public void damageTaken(int damage)
         {
-            PlayerDicePool = new List<int> {4, 6, 8, 10, 12, 20, 100};
-        }
-        //Creates the avaliable dice options the player can use
+            playerHp -= damage;
 
-        public void PlayerTurn()
-        {
-            Console.WriteLine("It is your turn " + PlayerName + ", good luck!");
-            Console.WriteLine("Your dice options are:");
-            for (int i = 0; i < PlayerDicePool.Count; i++)
+            // if playerHp is less or equal to 0 player dies
+            if (playerHp <= 0)
             {
-                Console.WriteLine($"D{PlayerDicePool[i]}");
+                playerIsAlive = false;
+                playerHp = 0;
             }
-            //Lists all of the current dice options the player have
-
-            Console.WriteLine("Please select which die you want to roll this round");
-            string ChosenDie = Console.ReadLine();
-
-            int SelectedDie;
-
-            while (!int.TryParse(ChosenDie.Substring(1), out SelectedDie) || !PlayerDicePool.Contains(SelectedDie)) {
-                Console.WriteLine("Error!");
-                Console.WriteLine("Please Select from the available options.");
-                ChosenDie = Console.ReadLine();
-            }
-            //If the player inputs an unexpected value shows an error and asks the player to choose again
-            
-            PlayerDicePool.Remove(SelectedDie);
-            CurrentRoll = DiceRoller.RollDie(SelectedDie);
-            Score += CurrentRoll;
-            //Removes the last rolled die from the list for next turn
-
         }
 
-        public void PlayerStats()
+
+        // Reset player stats
+        public void resetStats()
         {
-            Console.WriteLine(PlayerName + "'s Total Score:" + Score);
+            playerHp = 50;
+            score = 0;
+            playerIsAlive = true;
+            //clear inventory
         }
-        //Prints player final score
     }
 }
